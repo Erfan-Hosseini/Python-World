@@ -27,8 +27,8 @@ class Fraction:
         return Fraction(result_numerator, result_denominator)
 
 
-fraction1 = Fraction(2, 4)
-fraction2 = Fraction(4, 8)
+fraction1 = Fraction(3, 7)
+fraction2 = Fraction(2, 5)
 
 result_division = fraction1.divide(fraction2)
 result_addition = fraction1.plus(fraction2)
