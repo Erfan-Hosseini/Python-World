@@ -114,15 +114,30 @@ class Media:
                 else:
                     print("Wrong input.")
 
-    def edit(self):
-        self.name = input("Give me a new name for the Movie: ")
-        self.diractor = input("Give me a new diractor: ")
-        self.imdb = input("What is the imdb score? ")
-        self.url = input("What is the youtube URL? ")
-        self.duration = input("What is the duration for the movie? ")
-        self.casts = input("Give me the casts for the movie: ")
-        new_obj = Media(self.name,self.diractor,self.imdb,self.url,self.duration,self.casts)
-        MOVIES.append(new_obj)
+    @staticmethod
+    def edit():
+        print("Give me a part of the movie you want to edit.")
+        answer = input().lower()
+        for item in MOVIES:
+            print("Checking movie:", item.name)
+            if answer in item.name.lower():
+                print("Found a matching movie:", item.name)
+                print("Do you want to edit the movie named", item.name, "?")
+                answer = input("yes/no: ").lower()
+                if answer == "yes":
+                    new_name = input("Give me a new name for the Movie: ")
+                    new_diractor = input("Give me a new diractor: ")
+                    new_imdb = input("What is the imdb score? ")
+                    new_url = input("What is the youtube URL? ")
+                    new_duration = input("What is the duration for the movie? ")
+                    new_casts = input("Give me the casts for the movie: ")
+                    new_obj = Media(new_name,new_diractor,new_imdb,new_url,new_duration,new_casts)
+                    MOVIES.append(new_obj)
+                    break
+                elif answer == "no":
+                    print("Ok")
+                else:
+                    print("Wrong input.")
 
 
              
