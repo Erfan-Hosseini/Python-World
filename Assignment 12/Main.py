@@ -25,20 +25,7 @@ while True:
         
 
     elif answer == "6":
-        print("Give me a part of the movie you want to edit.")
-        answer = input()
-        for i, item in enumerate(MOVIES):
-            if answer in item[0]:
-                print("Do you want to edit the movie named", item[0],"?")
-                answer = input("yes/no: ").lower()
-                if answer == "yes":
-                    Media.MOVIES[i].edit()
-                    MOVIES.pop(i)  
-                    break
-                elif answer == "no":
-                    print("Ok")
-                else:
-                    print("Wrong input.")
+        Media.Media.edit()
             
 
     elif answer == "7": 
